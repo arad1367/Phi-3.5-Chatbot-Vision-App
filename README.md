@@ -23,13 +23,15 @@ To run the app locally, follow these steps:
 4. Remove the `import spaces` line and the `@spaces.GPU()` decorator from the code.
 5. Run the app by executing `python app.py`.
 
+## Possible error
+- Ensure that the spaces package is imported before any CUDA-related operations or imports
+
 ## Links
 
-- [Link to Hugging Face app]
-- [Link to GitHub repository]
-- [Link to YouTube video demonstration]
-- [Link to microsoft/Phi-3.5-mini-instruct model]
-- [Link to microsoft/Phi-3.5-vision-instruct model]
+- ![Link to Hugging Face app](https://huggingface.co/spaces/arad1367/Phi-3.5-Chatbot-Vision-App)
+- ![Link to GitHub repository](https://github.com/arad1367/Phi-3.5-Chatbot-Vision-App)
+- ![Link to microsoft/Phi-3.5-mini-instruct model](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
+- ![Link to microsoft/Phi-3.5-vision-instruct model](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
 ## Acknowledgements
 

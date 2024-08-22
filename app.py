@@ -1,3 +1,5 @@
+# Import neccessary libraries
+import spaces
 import os
 import time
 import torch
@@ -6,7 +8,6 @@ import gradio as gr
 from threading import Thread
 from PIL import Image
 import subprocess
-import spaces
 
 # Install flash-attn if not already installed
 subprocess.run('pip install flash-attn --no-build-isolation', env={'FLASH_ATTENTION_SKIP_CUDA_BUILD': "TRUE"}, shell=True)
@@ -16,7 +17,7 @@ MODEL_ID1 = "microsoft/Phi-3.5-mini-instruct"
 MODEL_LIST1 = ["microsoft/Phi-3.5-mini-instruct"]
 HF_TOKEN = os.environ.get("HF_TOKEN", None)
 
-device = "cuda"  # for GPU usage or "cpu" for CPU usage / But you need GPU :)
+device = "cuda" if torch.cuda.is_available() else "cpu"  # for GPU usage or "cpu" for CPU usage / But you need GPU :)
 
 quantization_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -195,6 +196,7 @@ footer = """
 with gr.Blocks(css=CSS, theme="small_and_pretty") as demo:
     gr.HTML(TITLE)
     gr.HTML(EXPLANATION)
+    gr.DuplicateButton(value="Duplicate Space for private use", elem_classes="duplicate-button")
     with gr.Tab("Chatbot"):
         chatbot = gr.Chatbot(height=600, placeholder=PLACEHOLDER)
         gr.ChatInterface(
