@@ -1,0 +1,11 @@
+accelerate==0.30.0
+bitsandbytes
+torch
+torchvision
+transformers==4.43.0
+einops
+sentencepiece
+numpy==1.24.4
+Pillow==10.3.0
+Requests==2.31.0
+gradio
